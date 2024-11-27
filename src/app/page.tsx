@@ -43,7 +43,13 @@ export default function Home() {
         ) : (
           <div className="fixed bg-primary w-full h-full top-0"></div>
         )}
-        <div className="fixed top-0 left-0 h-full w-full bg-black/30  -z-10 border-none"></div>
+        <div
+          className="fixed top-0 left-0 h-full w-full  bg-gradient-to-r  -z-10 border-none"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(0, 0, 0, 0.6) 15%, rgba(0, 0, 0, 0) 55%)",
+          }}
+        ></div>
 
         <Navbar />
         <Hero />

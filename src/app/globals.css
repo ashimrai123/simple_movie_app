@@ -70,3 +70,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* ------------------Shimmer --------------------- */
+
+@keyframes shimmer {
+  0% {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 4s linear infinite;
+}
