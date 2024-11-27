@@ -1,17 +1,14 @@
 "use client";
-import { axiosInstance } from "@/lib/axiosInstance";
-import { Movie } from "@/lib/types";
-import React, { useEffect, useState } from "react";
-import { Card } from "./ui/card";
-import Container from "./Container";
-import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
+import { axiosInstance } from "@/lib/axiosInstance";
+import { Movie } from "@/lib/types";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import Container from "./Container";
 import { useMovieContext } from "./MovieContext";
 
 interface MoviesDetails {
@@ -20,7 +17,7 @@ interface MoviesDetails {
 
 const Movies = () => {
   const [movies, setMovies] = useState<MoviesDetails | null>(null);
-  const { setSelectedMovie, isLoading, setIsLoading } = useMovieContext();
+  const { setSelectedMovie, setIsLoading } = useMovieContext();
 
   useEffect(() => {
     axiosInstance()
@@ -57,7 +54,7 @@ const Movies = () => {
             }}
           >
             <CarouselContent className="">
-              {movies?.results.map((movie, index) => {
+              {movies?.results.map((movie) => {
                 return (
                   <CarouselItem
                     className="  min-[400px]:basis-1/2 md:basis-1/3 lg:basis-1/4 "
@@ -77,14 +74,8 @@ const Movies = () => {
                 );
               })}
             </CarouselContent>
-
-            {/* <CarouselPrevious />
-            <CarouselNext /> */}
           </Carousel>
         </div>
-
-        <div></div>
-        {/* <Card></Card> */}
       </Container>
     </div>
   );

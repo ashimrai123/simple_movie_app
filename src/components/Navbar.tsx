@@ -5,12 +5,13 @@ import { useEffect, useRef, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import Container from "./Container";
 import { useMovieContext } from "./MovieContext";
+import { Movie } from "@/lib/types";
 
 const Navbar = () => {
-  const { selectedMovie, setSelectedMovie } = useMovieContext();
+  const { setSelectedMovie } = useMovieContext();
   const [isSearching, setIsSearching] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [suggestions, setSuggestions] = useState<Movie[]>([]);
   const searchRef = useRef<HTMLDivElement>(null);
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState<string>("");
 

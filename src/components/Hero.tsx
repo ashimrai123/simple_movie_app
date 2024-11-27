@@ -1,13 +1,11 @@
-import React from "react";
-import { useMovieContext } from "./MovieContext";
-import Container from "./Container";
-import Image from "next/image";
-import { Button } from "./ui/button";
-import { FaChevronRight, FaStar } from "react-icons/fa";
 import { BiSolidRightArrow } from "react-icons/bi";
+import { FaChevronRight, FaStar } from "react-icons/fa";
+import Container from "./Container";
+import { useMovieContext } from "./MovieContext";
+import { Button } from "./ui/button";
 
 const Hero = () => {
-  const { selectedMovie, setSelectedMovie } = useMovieContext();
+  const { selectedMovie } = useMovieContext();
 
   return (
     <>
